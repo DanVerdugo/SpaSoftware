@@ -79,7 +79,7 @@ public class VentasAdminPedidos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(table_usuarios);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones para inventario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 1, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones para venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 1, 14))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(153, 0, 153));
         jPanel1.setInheritsPopupMenu(true);
         jPanel1.setName(""); // NOI18N
@@ -137,7 +137,7 @@ public class VentasAdminPedidos extends javax.swing.JFrame {
 
         button_verTodo.setBackground(new java.awt.Color(255, 136, 18));
         button_verTodo.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        button_verTodo.setText("Ver Todo");
+        button_verTodo.setText("Consultar ventas");
         button_verTodo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button_verTodoMouseClicked(evt);

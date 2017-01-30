@@ -137,7 +137,7 @@ public class VentasAdminProductos extends javax.swing.JFrame {
 
         button_verTodo.setBackground(new java.awt.Color(255, 136, 18));
         button_verTodo.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        button_verTodo.setText("Ver Todo");
+        button_verTodo.setText("Consultar venta");
         button_verTodo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button_verTodoMouseClicked(evt);
