@@ -10,6 +10,8 @@ package prototipospa;
  * @author lis_h
  */
 public class login extends javax.swing.JFrame {
+    principalAdmin pAdmin;
+    PrincipalAsistente pAsis;
 
     /**
      * Creates new form login
@@ -53,6 +55,11 @@ public class login extends javax.swing.JFrame {
         jLabel2.setText("Contraseña:");
 
         jButton1.setText("Ingresar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -118,6 +125,18 @@ public class login extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+       //cambiar de pantalla para pantalla Admin
+         /*  pAdmin = new principalAdmin();
+           pAdmin.setVisible(true);
+           this.setVisible(false);*/
+           
+           //cambiar pantalla para Asistente
+           pAsis = new PrincipalAsistente();
+           pAsis.setVisible(true);
+           this.setVisible(false);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

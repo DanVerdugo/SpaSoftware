@@ -10,6 +10,7 @@ package prototipospa;
  * @author lis_h
  */
 public class VentasAdminProductos extends javax.swing.JFrame {
+    principalAdmin pAdmin;
 
     /**
      * Creates new form PedidosAdmin
@@ -151,6 +152,11 @@ public class VentasAdminProductos extends javax.swing.JFrame {
         button_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button_regresarMouseClicked(evt);
+            }
+        });
+        button_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_regresarActionPerformed(evt);
             }
         });
         jPanel1.add(button_regresar);
@@ -384,16 +390,19 @@ public class VentasAdminProductos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_verTodoMouseClicked
 
-    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
-        /* g=new Gerente();
-        g.setVisible(true);
-        g.nombre(Lbusu.getText());
-        this.setVisible(false);*/
-    }//GEN-LAST:event_button_regresarMouseClicked
-
     private void text_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_precioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_text_precioActionPerformed
+
+    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
+        pAdmin = new principalAdmin();
+        pAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_regresarMouseClicked
+
+    private void button_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_regresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_regresarActionPerformed
 
     /**
      * @param args the command line arguments

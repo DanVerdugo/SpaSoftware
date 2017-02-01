@@ -1,3 +1,6 @@
+
+import prototipospa.principalAdmin;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,6 +12,7 @@
  * @author Daniel
  */
 public class ConsultarVentas extends javax.swing.JFrame {
+    principalAdmin back;
 
     /**
      * Creates new form ConsultarVentas
@@ -227,10 +231,9 @@ public class ConsultarVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_text_precioActionPerformed
 
     private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
-        /* g=new Gerente();
-        g.setVisible(true);
-        g.nombre(Lbusu.getText());
-        this.setVisible(false);*/
+        back = new principalAdmin();
+        back.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_button_regresarMouseClicked
 
     private void button_verTodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_verTodoMouseClicked

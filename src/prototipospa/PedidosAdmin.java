@@ -10,6 +10,7 @@ package prototipospa;
  * @author lis_h
  */
 public class PedidosAdmin extends javax.swing.JFrame {
+    ProductAdmin pPedidos;
 
     /**
      * Creates new form PedidosAdmin
@@ -374,10 +375,10 @@ public class PedidosAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_button_verTodoMouseClicked
 
     private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
-        /* g=new Gerente();
-        g.setVisible(true);
-        g.nombre(Lbusu.getText());
-        this.setVisible(false);*/
+
+        pPedidos = new ProductAdmin();
+        pPedidos.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_button_regresarMouseClicked
 
     private void text_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_precioActionPerformed
