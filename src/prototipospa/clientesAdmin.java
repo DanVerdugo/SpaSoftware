@@ -10,6 +10,7 @@ package prototipospa;
  * @author lis_h
  */
 public class clientesAdmin extends javax.swing.JFrame {
+    principalAdmin pAdmin;
 
     /**
      * Creates new form usuariosAdmin
@@ -37,8 +38,8 @@ public class clientesAdmin extends javax.swing.JFrame {
         button_actualizar = new javax.swing.JButton();
         button_buscar = new javax.swing.JButton();
         button_verTodo = new javax.swing.JButton();
-        button_regresar = new javax.swing.JButton();
         button_historial = new javax.swing.JButton();
+        button_regresar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         text_nombreUsuario = new javax.swing.JTextField();
@@ -149,16 +150,6 @@ public class clientesAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(button_verTodo);
 
-        button_regresar.setBackground(new java.awt.Color(255, 136, 18));
-        button_regresar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        button_regresar.setText("Regresar");
-        button_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_regresarMouseClicked(evt);
-            }
-        });
-        jPanel1.add(button_regresar);
-
         button_historial.setBackground(new java.awt.Color(255, 136, 18));
         button_historial.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         button_historial.setText("Ver historial");
@@ -168,6 +159,21 @@ public class clientesAdmin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(button_historial);
+
+        button_regresar.setBackground(new java.awt.Color(255, 136, 18));
+        button_regresar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        button_regresar.setText("Regresar");
+        button_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_regresarMouseClicked(evt);
+            }
+        });
+        button_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_regresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(button_regresar);
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         jLabel5.setText("Cliente");
@@ -288,63 +294,7 @@ public class clientesAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_table_usuariosKeyReleased
 
     private void button_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_registrarMouseClicked
-        //javax.swing.JOptionPane.showMessageDialog(null, "Registrando");
-      /*  String cli=txtRFC.getText();
-
-        Connection miCon;
-        miCon = (new ConexionB()).conectar();
-        if(!cli.equals("") ){
-            if(txtRFC.getText().length()<12){
-                JOptionPane.showMessageDialog(null, "Error en los campos");
-            }
-            if(miCon!=null){
-                try{
-                    String sql ="SELECT * FROM CLIENTES WHERE RFC='"+cli+"'";
-                    Statement stmt = miCon.createStatement();
-                    //CallableStatment miCon =
-                    ResultSet r = stmt.executeQuery(sql);
-                    if(r.next()){
-                        String cad = r.getString("RFC")+"";
-                        if(cad.equals(cli)){
-                            javax.swing.JOptionPane.showMessageDialog(null, "Cliente ya registrado");
-
-                        }
-                        r.close();
-
-                    }
-                    else{
-
-                        Connection miCon2;
-                        miCon2 = (new ConexionB()).conectar();
-                        if(!cli.equals("") ){
-                            if(miCon2!=null){
-                                try{
-                                    String sql2 = "INSERT INTO CLIENTES VALUES('"+txtNom.getText()+"','"+txtRFC.getText()+"','"+txtEmail.getText()+"')";
-                                    Statement stmt2 = miCon2.createStatement();
-                                    ResultSet r2 = stmt.executeQuery(sql2);
-
-                                }
-                                catch(Exception e){
-                                    /* JOptionPane.showMessageDialog(null, "Conexión Fallida"+ e.getMessage());
-                                }
-                            }
-
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Error");
-                        }
-                        //actualizar();
-                        txtRFC.setText("");
-
-                    }
-                }
-                catch(Exception e){
-                    JOptionPane.showMessageDialog(null, "Conexión Fallida"+ e.getMessage());
-                }
-            }
-        }
-        else{ javax.swing.JOptionPane.showMessageDialog(null, "Error");
-        }
-        limpiar();*/
+    
 
     }//GEN-LAST:event_button_registrarMouseClicked
 
@@ -364,13 +314,6 @@ public class clientesAdmin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_buscarMouseClicked
 
-    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
-        /* g=new Gerente();
-        g.setVisible(true);
-        g.nombre(Lbusu.getText());
-        this.setVisible(false);*/
-    }//GEN-LAST:event_button_regresarMouseClicked
-
     private void button_verTodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_verTodoMouseClicked
 
     }//GEN-LAST:event_button_verTodoMouseClicked
@@ -382,6 +325,16 @@ public class clientesAdmin extends javax.swing.JFrame {
     private void button_historialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_historialMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_button_historialMouseClicked
+
+    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
+        pAdmin = new principalAdmin();
+        pAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_regresarMouseClicked
+
+    private void button_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_regresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_regresarActionPerformed
 
     /**
      * @param args the command line arguments

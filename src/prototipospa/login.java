@@ -10,6 +10,8 @@ package prototipospa;
  * @author lis_h
  */
 public class login extends javax.swing.JFrame {
+    principalAdmin pAdmin;
+    PrincipalAsistente pAsis;
 
     /**
      * Creates new form login
@@ -53,6 +55,7 @@ public class login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 30)); // NOI18N
         jLabel2.setText("Contraseña:");
 
+<<<<<<< HEAD
         button_registrar.setBackground(new java.awt.Color(255, 136, 18));
         button_registrar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         button_registrar.setText("Ingresar");
@@ -62,6 +65,15 @@ public class login extends javax.swing.JFrame {
             }
         });
         button_registrar.addActionListener(new java.awt.event.ActionListener() {
+=======
+        jButton1.setText("Ingresar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> origin/master
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_registrarActionPerformed(evt);
             }
@@ -136,6 +148,7 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+
     private void button_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_registrarMouseClicked
         
     }//GEN-LAST:event_button_registrarMouseClicked
@@ -147,6 +160,18 @@ public class login extends javax.swing.JFrame {
     private void button_registrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_button_registrarKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_button_registrarKeyReleased
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+       //cambiar de pantalla para pantalla Admin
+         /*  pAdmin = new principalAdmin();
+           pAdmin.setVisible(true);
+           this.setVisible(false);*/
+           
+           //cambiar pantalla para Asistente
+           pAsis = new PrincipalAsistente();
+           pAsis.setVisible(true);
+           this.setVisible(false);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

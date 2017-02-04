@@ -139,9 +139,14 @@
             <Property name="text" type="java.lang.String" value="Ingresar"/>
           </Properties>
           <Events>
+<<<<<<< HEAD
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_registrarMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_registrarActionPerformed"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="button_registrarKeyReleased"/>
+=======
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+>>>>>>> origin/master
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">

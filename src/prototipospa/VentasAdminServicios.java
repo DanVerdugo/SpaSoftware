@@ -10,6 +10,7 @@ package prototipospa;
  * @author lis_h
  */
 public class VentasAdminServicios extends javax.swing.JFrame {
+    principalAdmin pAdmin;
 
     /**
      * Creates new form PedidosAdmin
@@ -153,6 +154,11 @@ public class VentasAdminServicios extends javax.swing.JFrame {
                 button_regresarMouseClicked(evt);
             }
         });
+        button_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_regresarActionPerformed(evt);
+            }
+        });
         jPanel1.add(button_regresar);
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
@@ -232,12 +238,9 @@ public class VentasAdminServicios extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(tot, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(70, 70, 70)
+                        .addComponent(tot, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(161, 161, 161))
         );
         jPanel2Layout.setVerticalGroup(
@@ -384,16 +387,19 @@ public class VentasAdminServicios extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_verTodoMouseClicked
 
-    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
-        /* g=new Gerente();
-        g.setVisible(true);
-        g.nombre(Lbusu.getText());
-        this.setVisible(false);*/
-    }//GEN-LAST:event_button_regresarMouseClicked
-
     private void text_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_precioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_text_precioActionPerformed
+
+    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
+        pAdmin = new principalAdmin();
+        pAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_regresarMouseClicked
+
+    private void button_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_regresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_regresarActionPerformed
 
     /**
      * @param args the command line arguments

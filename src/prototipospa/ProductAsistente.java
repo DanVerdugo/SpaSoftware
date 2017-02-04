@@ -10,6 +10,8 @@ package prototipospa;
  * @author lis_h
  */
 public class ProductAsistente extends javax.swing.JFrame {
+    PedidosAdmin pPedido;
+    PrincipalAsistente pAsistente;
 
     /**
      * Creates new form ProductAsistente
@@ -28,26 +30,41 @@ public class ProductAsistente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        button_regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 30)); // NOI18N
+        jLabel1.setText("Productos");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Nueva carpeta/pedido.png"))); // NOI18N
+
         jButton5.setBackground(new java.awt.Color(255, 136, 18));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pedido.png"))); // NOI18N
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 30)); // NOI18N
-        jLabel1.setText("Productos");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Nueva carpeta/pedido.png"))); // NOI18N
+        button_regresar.setBackground(new java.awt.Color(255, 136, 18));
+        button_regresar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        button_regresar.setText("Regresar");
+        button_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_regresarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -56,27 +73,32 @@ public class ProductAsistente extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(256, 256, 256)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(25, 25, 25)))))
-                .addContainerGap(304, Short.MAX_VALUE))
+                        .addGap(276, 276, 276)
+                        .addComponent(jButton5)))
+                .addContainerGap(284, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(button_regresar)
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(98, 98, 98)
+                .addGap(103, 103, 103)
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(button_regresar)
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,9 +117,21 @@ public class ProductAsistente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        pPedido = new PedidosAdmin();
+        pPedido.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5MouseClicked
+
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
+        pAsistente = new PrincipalAsistente();
+        pAsistente.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_regresarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -135,6 +169,7 @@ public class ProductAsistente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button_regresar;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

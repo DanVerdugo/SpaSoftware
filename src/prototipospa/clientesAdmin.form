@@ -307,20 +307,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_verTodoMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="button_regresar">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="12" green="88" red="ff" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Regresar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_regresarMouseClicked"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="button_historial">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -333,6 +319,21 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_historialMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="button_regresar">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="12" green="88" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Trebuchet MS" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Regresar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_regresarMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_regresarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -75,7 +75,6 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel5" min="-2" pref="129" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
@@ -325,6 +324,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_regresarMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_regresarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

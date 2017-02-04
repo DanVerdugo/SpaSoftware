@@ -10,6 +10,12 @@ package prototipospa;
  * @author lis_h
  */
 public class principalAdmin extends javax.swing.JFrame {
+    usuariosAdmin pUsuarios;
+    clientesAdmin pClientes;
+    CitasAdmin pCitas;
+    ProductAdmin pProductos;
+    ServiciosAdmin pServicios;
+    OpcionesVenta pVentas;
 
     /**
      * Creates new form principalAdmin
@@ -28,12 +34,12 @@ public class principalAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        button_usuarios = new javax.swing.JButton();
+        button_citas = new javax.swing.JButton();
+        button_productos = new javax.swing.JButton();
+        button_ventas = new javax.swing.JButton();
+        button_clientes = new javax.swing.JButton();
+        button_servicios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,47 +47,78 @@ public class principalAdmin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(255, 136, 18));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/usuario.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        button_usuarios.setBackground(new java.awt.Color(255, 136, 18));
+        button_usuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/usuario.png"))); // NOI18N
+        button_usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_usuariosMouseClicked(evt);
+            }
+        });
+        button_usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                button_usuariosActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 136, 18));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/cita.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        button_citas.setBackground(new java.awt.Color(255, 136, 18));
+        button_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/cita.png"))); // NOI18N
+        button_citas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_citasMouseClicked(evt);
+            }
+        });
+        button_citas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                button_citasActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 136, 18));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inventario.png"))); // NOI18N
-
-        jButton4.setBackground(new java.awt.Color(255, 136, 18));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/venta.png"))); // NOI18N
-
-        jButton5.setBackground(new java.awt.Color(255, 136, 18));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/clientes.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        button_productos.setBackground(new java.awt.Color(255, 136, 18));
+        button_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inventario.png"))); // NOI18N
+        button_productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_productosMouseClicked(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(255, 136, 18));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/servicio.png"))); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        button_ventas.setBackground(new java.awt.Color(255, 136, 18));
+        button_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/venta.png"))); // NOI18N
+        button_ventas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_ventasMouseClicked(evt);
+            }
+        });
+
+        button_clientes.setBackground(new java.awt.Color(255, 136, 18));
+        button_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/clientes.png"))); // NOI18N
+        button_clientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_clientesMouseClicked(evt);
+            }
+        });
+        button_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                button_clientesActionPerformed(evt);
+            }
+        });
+
+        button_servicios.setBackground(new java.awt.Color(255, 136, 18));
+        button_servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/servicio.png"))); // NOI18N
+        button_servicios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_serviciosMouseClicked(evt);
+            }
+        });
+        button_servicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_serviciosActionPerformed(evt);
             }
         });
 
@@ -100,6 +137,10 @@ public class principalAdmin extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Nueva carpeta/ventas.png"))); // NOI18N
 
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 2, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setText("Salir");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -108,23 +149,20 @@ public class principalAdmin extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(button_productos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6))
+                        .addComponent(button_servicios))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(button_usuarios)
                         .addGap(18, 30, Short.MAX_VALUE)
-                        .addComponent(jButton5)))
+                        .addComponent(button_clientes)))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(button_citas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(button_ventas, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(87, 87, 87))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(jLabel4)
@@ -140,17 +178,25 @@ public class principalAdmin extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addComponent(jLabel7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(38, 38, 38))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel8))
                 .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(button_clientes)
+                    .addComponent(button_citas)
+                    .addComponent(button_usuarios))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,9 +204,9 @@ public class principalAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(button_servicios)
+                    .addComponent(button_productos)
+                    .addComponent(button_ventas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,21 +229,57 @@ public class principalAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void button_serviciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_serviciosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_button_serviciosActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void button_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_clientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_button_clientesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void button_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_citasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_button_citasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void button_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_usuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_button_usuariosActionPerformed
+
+    private void button_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_usuariosMouseClicked
+        pUsuarios = new usuariosAdmin();
+        pUsuarios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_usuariosMouseClicked
+
+    private void button_clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_clientesMouseClicked
+        pClientes = new clientesAdmin();
+        pClientes.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_clientesMouseClicked
+
+    private void button_citasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_citasMouseClicked
+        pCitas = new CitasAdmin();
+        pCitas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_citasMouseClicked
+
+    private void button_productosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_productosMouseClicked
+        pProductos = new ProductAdmin();
+        pProductos.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_productosMouseClicked
+
+    private void button_serviciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_serviciosMouseClicked
+        pServicios = new ServiciosAdmin();
+        pServicios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_serviciosMouseClicked
+
+    private void button_ventasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_ventasMouseClicked
+        pVentas = new OpcionesVenta();
+        pVentas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_ventasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -235,12 +317,12 @@ public class principalAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton button_citas;
+    private javax.swing.JButton button_clientes;
+    private javax.swing.JButton button_productos;
+    private javax.swing.JButton button_servicios;
+    private javax.swing.JButton button_usuarios;
+    private javax.swing.JButton button_ventas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -248,6 +330,7 @@ public class principalAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

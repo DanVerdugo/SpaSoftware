@@ -10,7 +10,7 @@ package prototipospa;
  * @author lis_h
  */
 public class VentasAdminPedidos extends javax.swing.JFrame {
-
+principalAdmin pAdmin;
     /**
      * Creates new form PedidosAdmin
      */
@@ -151,6 +151,11 @@ public class VentasAdminPedidos extends javax.swing.JFrame {
         button_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button_regresarMouseClicked(evt);
+            }
+        });
+        button_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_regresarActionPerformed(evt);
             }
         });
         jPanel1.add(button_regresar);
@@ -298,63 +303,7 @@ public class VentasAdminPedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_table_usuariosKeyReleased
 
     private void button_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_registrarMouseClicked
-        //javax.swing.JOptionPane.showMessageDialog(null, "Registrando");
-        /*  String cli=txtRFC.getText();
-
-        Connection miCon;
-        miCon = (new ConexionB()).conectar();
-        if(!cli.equals("") ){
-            if(txtRFC.getText().length()<12){
-                JOptionPane.showMessageDialog(null, "Error en los campos");
-            }
-            if(miCon!=null){
-                try{
-                    String sql ="SELECT * FROM CLIENTES WHERE RFC='"+cli+"'";
-                    Statement stmt = miCon.createStatement();
-                    //CallableStatment miCon =
-                    ResultSet r = stmt.executeQuery(sql);
-                    if(r.next()){
-                        String cad = r.getString("RFC")+"";
-                        if(cad.equals(cli)){
-                            javax.swing.JOptionPane.showMessageDialog(null, "Cliente ya registrado");
-
-                        }
-                        r.close();
-
-                    }
-                    else{
-
-                        Connection miCon2;
-                        miCon2 = (new ConexionB()).conectar();
-                        if(!cli.equals("") ){
-                            if(miCon2!=null){
-                                try{
-                                    String sql2 = "INSERT INTO CLIENTES VALUES('"+txtNom.getText()+"','"+txtRFC.getText()+"','"+txtEmail.getText()+"')";
-                                    Statement stmt2 = miCon2.createStatement();
-                                    ResultSet r2 = stmt.executeQuery(sql2);
-
-                                }
-                                catch(Exception e){
-                                    /* JOptionPane.showMessageDialog(null, "Conexión Fallida"+ e.getMessage());
-                                }
-                            }
-
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Error");
-                        }
-                        //actualizar();
-                        txtRFC.setText("");
-
-                    }
-                }
-                catch(Exception e){
-                    JOptionPane.showMessageDialog(null, "Conexión Fallida"+ e.getMessage());
-                }
-            }
-        }
-        else{ javax.swing.JOptionPane.showMessageDialog(null, "Error");
-        }
-        limpiar();*/
+   
     }//GEN-LAST:event_button_registrarMouseClicked
 
     private void button_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_registrarActionPerformed
@@ -381,16 +330,19 @@ public class VentasAdminPedidos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_verTodoMouseClicked
 
-    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
-        /* g=new Gerente();
-        g.setVisible(true);
-        g.nombre(Lbusu.getText());
-        this.setVisible(false);*/
-    }//GEN-LAST:event_button_regresarMouseClicked
-
     private void text_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_precioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_text_precioActionPerformed
+
+    private void button_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_regresarMouseClicked
+        pAdmin = new principalAdmin();
+        pAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button_regresarMouseClicked
+
+    private void button_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_regresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_regresarActionPerformed
 
     /**
      * @param args the command line arguments
